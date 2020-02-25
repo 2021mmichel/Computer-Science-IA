@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Directions to Facility</title>
+    </head>
+    <body>
+      <h1>General Location</h1>
+      <div class="general_location_list">
+        <ul>
+          {% for location in locations %}
+            <li>{{ location.general_location }} - {{ location.sport }}</li>
+          {% endfor %}
+          <!-- set up a form with a post method and results action -->
+      <form method = "post" action = "/location_results">
+      <!-- need event_name and event_date using two text input (bonus- use date) -->
+      <p>Choose one of the following general locations!</p>
+      <input type = "radio" name = "general_location" value = "Harlem">Harlem<br></input>
+      <input type = "radio" name = "general_location" value = "Upper West Side">Upper West Side<br></input>
+      <h1>Sport</h1>
+      <p>Choose one of the following sports!</p>
+      <input type = "radio" name = "sport" value = "Basketball">Basketball<br></input>
+      <!-- need submit button -->
+      <br><input type = "submit" value = "submit"></input>
+      </form>
+      </div>
+    </body>
+</html>

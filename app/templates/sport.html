@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Directions to Facility</title>
+    </head>
+    <body>
+      <h1>Sport</h1>
+      <div class="general_location_list">
+        <ul>
+          {% for location in sports %}
+            <li>{{location.sport}}</li>
+          {% endfor %}
+          <!-- set up a form with a post method and results action -->
+      <form method = "post" action = "/sport_results">
+      <!-- need event_name and event_date using two text input (bonus- use date) -->
+      <p>Choose one of the following sports!</p>
+      <input type = "radio" name = "sport" value = "Basketball">Basketball<br>
+      <br>
+      <!-- need submit button -->
+      <input type = "submit" value = "submit"/>
+        </ul>
+      </div>
+    </body>
+</html>
