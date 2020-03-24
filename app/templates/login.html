@@ -1,12 +1,20 @@
 <html>
     <head>
-      <title>Directions to Facility</title>
-      <link rel="stylesheet" href="/../static/style.css">
+        <title>Directions to Facility</title>
     </head>
     <body>
       <h1>Directions to Facility</h1>
+      {% if session %}<p><a href="/mylocations">My Locations</a></p>{% endif %}
+      <div class="general_location_list">
+        <ul>
+          {% for location in locations %}
+            <li>{{ location.general_location }} - {{ location.sport }}</li>
+          {% endfor %}
+      </div>
       {% if session %}
-        <p> You are logged in as {{ session ['username'] }}. <a href = "/logout">Logout<a/></p>
+        <p> You are logged in as {{ session ['username'] }}.</p>
+
+        <p></p><a href = "/logout">Logout<a/></p>
       {% else %}
       <h3>Log in<h3>
       <form action = "/login" method = "POST">
@@ -20,6 +28,5 @@
       </form>
       <p>Need an account? <a href="/signup">Sign up.</a></p>
       {% endif %}
-      </form>
     </body>
 </html>

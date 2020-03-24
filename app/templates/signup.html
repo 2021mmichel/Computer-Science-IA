@@ -5,14 +5,14 @@
     <body>
       <h1>Sign Up</h1>
           <!-- set up a form with a post method and results action -->
-      <form method = "post" action = "/signup">
+      <form action = "/signup" method = "POST">
       <!-- need event_name and event_date using two text input (bonus- use date) -->
-        <p>User email address</p>
-        <input type = "text" name = "email"></input>
-        <p>User password</p>
+        <label for="name">Name</label>
+        <input type = "text" name = "username"></input>
+        <label for="password">Password</label>
         <input type = "password" name = "password"></input>
       <!-- need submit button -->
-        <input type = "submit" value = "submit"/></input>
+        <input type = "submit" value = "Sign Up"/></input>
       </form>
     </body>
 </html>

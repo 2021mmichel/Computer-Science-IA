@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Directions to Facility</title>
+    </head>
+    <body>
+      <h1>Directions to Facility</h1>
+      <div class="event-list">
+        <ul>
+          {% for location in locations %}
+            <li>{{ location.general_location }} - {{ location.sport }} {% if event.user %}({{ event.user }}){% endif %}</li>
+          {% endfor %}
+    </body>
+</html>
