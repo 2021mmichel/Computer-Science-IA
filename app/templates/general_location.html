@@ -1,37 +1,43 @@
 <html>
     <head>
-        <title>Directions to Facility</title>
+      <title>Directions to Facility</title>
+      <link rel="shortcut icon" type="image/ico" href="favicon1.ico">
+      <link rel="stylesheet" href="/../static/style.css">
     </head>
     <body>
-      <h1>General Location</h1>
-        <p> You are logged in as {{ session ['username'] }}. <a href = "/logout">Logout<a/></p>
-      <!-- set up a form with a post method and results action -->
-      <form method = "post" action = "/location_results">
-      <!-- need event_name and event_date using two text input (bonus- use date) -->
-      <p>Choose one of the following general locations!</p>
-      <input type = "radio" name = "general_location" value = "Harlem">Harlem<br></input>
-      <input type = "radio" name = "general_location" value = "Morningside Heights">Morningside Heights<br></input>
-      <input type = "radio" name = "general_location" value = "East Harlem">East Harlem<br></input>
-      <input type = "radio" name = "general_location" value = "Upper West Side">Upper West Side<br></input>
-      <input type = "radio" name = "general_location" value = "Upper East Side">Upper East Side<br></input>
-      <input type = "radio" name = "general_location" value = "Midtown West">Midtown West<br></input>
-      <input type = "radio" name = "general_location" value = "Midtown East">Midtown East<br></input>
-      <input type = "radio" name = "general_location" value = "Times Square">Times Square<br></input>
-      <input type = "radio" name = "general_location" value = "Murray Hill">Murray Hill<br></input>
-      <input type = "radio" name = "general_location" value = "Garment District">Garment District<br></input>
-      <input type = "radio" name = "general_location" value = "Gramercy">Gramercy<br></input>
-      <input type = "radio" name = "general_location" value = "Stuyvesant Town">Stuyvesant Town<br></input>
-      <input type = "radio" name = "general_location" value = "Chelsea">Chelsea<br></input>
-      <input type = "radio" name = "general_location" value = "Greenwich Village">Greenwich Village<br></input>
-      <input type = "radio" name = "general_location" value = "East Village">East Village<br></input>
-      <input type = "radio" name = "general_location" value = "Lower East Side">Lower East Side<br></input>
-      <input type = "radio" name = "general_location" value = "Little Italy">Little Italy<br></input>
-      <input type = "radio" name = "general_location" value = "Soho">Soho<br></input>
-      <input type = "radio" name = "general_location" value = "Tribeca">Tribeca<br></input>
-      <input type = "radio" name = "general_location" value = "Chinatown">Chinatown<br></input>
-      <input type = "radio" name = "general_location" value = "Financial District">Financial District<br></input>
-      <!-- need submit button -->
-      <br><input type = "submit" value = "submit"></input>
-      </form>
-    </body>
-</html>
+      <h1>Directions to Facility</h1>
+
+      <img src="logo.png">
+
+      <h2>General Location</h2>
+      <h4><span class="signup">You are logged in as {{ session ['username'] }}. <a href="/logout" class="logout_button">Logout</a></span></h4>
+          <!-- set up a form with a post method and results action -->
+          <form method = "post" action = "/location_results">
+          <!-- need event_name and event_date using two text input (bonus- use date) -->
+          <p>Choose one of the following general locations!</p>
+          <input type = "radio" name = "general_location" value = "Harlem">Harlem<br></input>
+          <input type = "radio" name = "general_location" value = "Morningside Heights">Morningside Heights<br></input>
+          <input type = "radio" name = "general_location" value = "East Harlem">East Harlem<br></input>
+          <input type = "radio" name = "general_location" value = "Upper West Side">Upper West Side<br></input>
+          <input type = "radio" name = "general_location" value = "Upper East Side">Upper East Side<br></input>
+          <input type = "radio" name = "general_location" value = "Midtown West">Midtown West<br></input>
+          <input type = "radio" name = "general_location" value = "Midtown East">Midtown East<br></input>
+          <input type = "radio" name = "general_location" value = "Times Square">Times Square<br></input>
+          <input type = "radio" name = "general_location" value = "Murray Hill">Murray Hill<br></input>
+          <input type = "radio" name = "general_location" value = "Garment District">Garment District<br></input>
+          <input type = "radio" name = "general_location" value = "Gramercy">Gramercy<br></input>
+          <input type = "radio" name = "general_location" value = "Stuyvesant Town">Stuyvesant Town<br></input>
+          <input type = "radio" name = "general_location" value = "Chelsea">Chelsea<br></input>
+          <input type = "radio" name = "general_location" value = "Greenwich Village">Greenwich Village<br></input>
+          <input type = "radio" name = "general_location" value = "East Village">East Village<br></input>
+          <input type = "radio" name = "general_location" value = "Lower East Side">Lower East Side<br></input>
+          <input type = "radio" name = "general_location" value = "Little Italy">Little Italy<br></input>
+          <input type = "radio" name = "general_location" value = "Soho">Soho<br></input>
+          <input type = "radio" name = "general_location" value = "Tribeca">Tribeca<br></input>
+          <input type = "radio" name = "general_location" value = "Chinatown">Chinatown<br></input>
+          <input type = "radio" name = "general_location" value = "Financial District">Financial District<br></input>
+          <!-- need submit button -->
+          <button type = "submit" value = "Submit" class = "submit_button"/>Submit</button>
+          </form>
+        </body>
+    </html>

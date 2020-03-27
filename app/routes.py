@@ -103,25 +103,62 @@ def general_location():
 def location_results():
     # store userinfo from the form
     user_info = dict(request.form)
-    print("the user info is")
-    print(user_info)
+    # print("the user info is")
+    # print(user_info)
     #store the general_location
     general_location = user_info["general_location"]
-    #store the sport
-    sport = user_info["sport"]
+    # #store the sport
+    # sport = user_info["sport"]
 
     #connect to Mongo DB
     collection = mongo.db.locations
     #insert the user's input event_name and event_date to MONGO
-    collection.insert({"general_location": general_location, "sport":sport})
+    collection.insert({"general_location": general_location})
     #(so that it will continue to exist after this program stops)
     #redirect back to the index page
 
-    if general_location == "Harlem" and sport == "Basketball":
-        return("Go to Spain!")
+    if general_location == "Harlem":
+        return redirect(url_for('harlem'))
 
-    if general_location == "Upper West Side" and sport == "Basketball":
-        return("Go to France!")
+    if general_location == "Morningside Heights":
+        return redirect(url_for('morningside_heights'))
+
+    if general_location == "East Harlem":
+        return redirect(url_for('east_harlem'))
+
+    if general_location == "Upper West Side":
+        return redirect(url_for('upper_west_side'))
+
+    if general_location == "Upper East Side":
+        return redirect(url_for('upper_east_side'))
+
+    if general_location == "Midtown West":
+        return redirect(url_for('midtown_west'))
+
+    if general_location == "Midtown East":
+        return redirect(url_for('midtown_east'))
+
+    if general_location == "Harlem":
+        return redirect(url_for('harlem'))
+
+    if general_location == "Harlem":
+        return redirect(url_for('harlem'))
+
+    if general_location == "Harlem":
+        return redirect(url_for('harlem'))
+
+    if general_location == "Harlem":
+        return redirect(url_for('harlem'))
+
+    if general_location == "Harlem":
+        return redirect(url_for('harlem'))
+
+    # if general_location == "Upper West Side" and sport == "Basketball":
+    #     return("Go to France!")
+
+@app.route('/harlem')
+def harlem():
+    return render_template('harlem.html', locations = locations)
 
 # @app.route('/general_location')
 # def general_location():

@@ -1,18 +1,29 @@
 <html>
     <head>
-        <title>Directions to Facility</title>
+      <title>Directions to Facility</title>
+      <link rel="shortcut icon" type="image/ico" href="favicon1.ico">
+      <link rel="stylesheet" href="/../static/style.css">
     </head>
     <body>
-      <h1>Sign Up</h1>
-          <!-- set up a form with a post method and results action -->
-      <form action = "/signup" method = "POST">
-      <!-- need event_name and event_date using two text input (bonus- use date) -->
-        <label for="name">Name</label>
-        <input type = "text" name = "username"></input>
+      <h1>Directions to Facility</h1>
+
+      <img src="logo.png">
+
+      <h2>Sign Up</h2>
+      <h3><form action = "/signup" method = "POST">
+    <!-- need event_name and event_date using two text input (bonus- use date) -->
+        <label for="name">Username</label>
+        <br>
+        <input type = "text" placeholder="Enter Username" name = "username"></input>
+        <br>
         <label for="password">Password</label>
-        <input type = "password" name = "password"></input>
-      <!-- need submit button -->
-        <input type = "submit" value = "Sign Up"/></input>
+        <br>
+        <input type = "password" placeholder="Enter Password" name = "password"></input>
+        <br>
+    <!-- need submit button -->
+        <button type = "submit" class="signup"/>Sign Up</button>
+      </form></h3>
+      <a href="/index" class="go_back_button">Go Back</a>
       </form>
     </body>
 </html>
