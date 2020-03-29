@@ -1,17 +1,14 @@
 <html>
     <head>
       <title>Directions to Facility</title>
-      <link rel="shortcut icon" type="image/ico" href="favicon1.ico">
+      <link rel="icon" type="image/png" href="/../static/logo.png">
       <link rel="stylesheet" href="/../static/style.css">
     </head>
     <body>
       <h1>Directions to Facility</h1>
 
-      <img src="logo.png">
+      <img src="/../static/logo.png" alt="Logo" class="img1">
 
-      {% if session %}
-        <p> You are logged in as {{ session ['username'] }}. <a href = "/logout">Logout<a/></p>
-      {% else %}
       <h2>Login</h2>
       <h3><form action = "/login" method = "POST">
     <!-- need event_name and event_date using two text input (bonus- use date) -->
@@ -27,6 +24,6 @@
         <button type = "submit" value = "Log In"/>Login</button>
       </form></h3>
       <h4><span class="signup">Need an account? <a href="/signup" class="sign_up_button">Sign Up</a></span>
-      {% endif %}</h4>
+      </h4>
     </body>
 </html>

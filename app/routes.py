@@ -99,8 +99,8 @@ def general_location():
     return render_template('general_location.html', locations = locations)
 
 # need a get and a post method
-@app.route('/location_results', methods = ["general_location_list", "POST"])
-def location_results():
+@app.route('/general_location_results', methods = ["general_location_list", "POST"])
+def general_location_results():
     # store userinfo from the form
     user_info = dict(request.form)
     # print("the user info is")
@@ -109,7 +109,6 @@ def location_results():
     general_location = user_info["general_location"]
     # #store the sport
     # sport = user_info["sport"]
-
     #connect to Mongo DB
     collection = mongo.db.locations
     #insert the user's input event_name and event_date to MONGO
@@ -138,20 +137,47 @@ def location_results():
     if general_location == "Midtown East":
         return redirect(url_for('midtown_east'))
 
-    if general_location == "Harlem":
-        return redirect(url_for('harlem'))
+    if general_location == "Times Square":
+        return redirect(url_for('times_square'))
 
-    if general_location == "Harlem":
-        return redirect(url_for('harlem'))
+    if general_location == "Murray Hill":
+        return redirect(url_for('murray_hill'))
 
-    if general_location == "Harlem":
-        return redirect(url_for('harlem'))
+    if general_location == "Garment District":
+        return redirect(url_for('garment_district'))
 
-    if general_location == "Harlem":
-        return redirect(url_for('harlem'))
+    if general_location == "Gramercy":
+        return redirect(url_for('gramercy'))
 
-    if general_location == "Harlem":
-        return redirect(url_for('harlem'))
+    if general_location == "Stuyvesant Town":
+        return redirect(url_for('stuyvesant_town'))
+
+    if general_location == "Chelsea":
+        return redirect(url_for('chelsea'))
+
+    if general_location == "Greenwich Village":
+        return redirect(url_for('greenwich_village'))
+
+    if general_location == "East Village":
+        return redirect(url_for('east_village'))
+
+    if general_location == "Lower East Side":
+        return redirect(url_for('lower_east_side'))
+
+    if general_location == "Little Italy":
+        return redirect(url_for('little_italy'))
+
+    if general_location == "Soho":
+        return redirect(url_for('soho'))
+
+    if general_location == "Tribeca":
+        return redirect(url_for('tribeca'))
+
+    if general_location == "Chinatown":
+        return redirect(url_for('chinatown'))
+
+    if general_location == "Financial District":
+        return redirect(url_for('financial_district'))
 
     # if general_location == "Upper West Side" and sport == "Basketball":
     #     return("Go to France!")
@@ -159,6 +185,98 @@ def location_results():
 @app.route('/harlem')
 def harlem():
     return render_template('harlem.html', locations = locations)
+
+@app.route('/morningside_heights')
+def morningside_heights():
+    return render_template('morningside_heights.html', locations = locations)
+
+@app.route('/east_harlem')
+def east_harlem():
+    return render_template('east_harlem.html', locations = locations)
+
+@app.route('/midtown_west')
+def midtown_west():
+    return render_template('midtown_west.html', locations = locations)
+
+@app.route('/midtown_east')
+def midtown_east():
+    return render_template('midtown_east.html', locations = locations)
+
+@app.route('/times_square')
+def times_square():
+    return render_template('times_square.html', locations = locations)
+
+@app.route('/murray_hill')
+def murray_hill():
+    return render_template('murray_hill.html', locations = locations)
+
+@app.route('/garment_district')
+def garment_district():
+    return render_template('garment_district.html', locations = locations)
+
+@app.route('/gramercy')
+def gramercy():
+    return render_template('gramercy.html', locations = locations)
+
+@app.route('/stuyvesant_town')
+def stuyvesant_town():
+    return render_template('stuyvesant_town.html', locations = locations)
+
+@app.route('/chelsea')
+def chelsea():
+    return render_template('chelsea.html', locations = locations)
+
+@app.route('/greenwich_village')
+def greenwich_village():
+    return render_template('greenwich_village.html', locations = locations)
+
+@app.route('/east_village')
+def east_village():
+    return render_template('east_village.html', locations = locations)
+
+@app.route('/lower_east_side')
+def lower_east_side():
+    return render_template('lower_east_side.html', locations = locations)
+
+@app.route('/little_italy')
+def little_italy():
+    return render_template('little_italy.html', locations = locations)
+
+@app.route('/soho')
+def soho():
+    return render_template('soho.html', locations = locations)
+
+@app.route('/tribeca')
+def tribeca():
+    return render_template('tribeca.html', locations = locations)
+
+@app.route('/chinatown')
+def chinatown():
+    return render_template('chinatown.html', locations = locations)
+
+@app.route('/financial_district')
+def financial_district():
+    return render_template('financial_district.html', locations = locations)
+
+@app.route('/sport')
+def sport():
+    return render_template('sport.html', locations = locations)
+
+@app.route('/specific_location')
+def specific_location():
+    collection = mongo.db.locations
+    name = session['username']
+    locations = collection.find({"user":name})
+    return render_template('specific_location.html', locations = locations)
+
+@app.route('/specific_location_results', methods = ["specific_location_list", "POST"])
+def specific_location_results():
+    user_info = dict(request.form)
+    specific_location = user_info["specific_location"]
+    collection = mongo.db.locations
+    collection.insert({"specific_location": specific_location})
+    #(so that it will continue to exist after this program stops)
+    #redirect back to the index page
 
 # @app.route('/general_location')
 # def general_location():
