@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Nearest Sports Facility</title>
+    </head>
+    <body>
+      <h1>Nearest Sports Facility</h1>
+      <div class="general_location_list">
+        <ul>
+          {% for location in locations %}
+            <li>{{ location.general_location }} - {{ location.sport }}</li>
+          {% endfor %}
+      </div>
+      {% if session %}
+        <p> You are logged in as {{ session ['username'] }}. <a href = "/logout">Logout<a/></p>
+      {% else %}
+      <h3>Log in<h3>
+      <form action = "/login" method = "POST">
+    <!-- need event_name and event_date using two text input (bonus- use date) -->
+        <label for="name">Name</label>
+        <input type = "text" name = "username"></input>
+        <label for="password">Password</label>
+        <input type = "password" name = "password"></input>
+    <!-- need submit button -->
+        <input type = "submit" value = "Log In"/></input>
+      </form>
+      <p>Need an account? <a href="/signup">Sign up.</a></p>
+      {% endif %}
+          <!-- set up a form with a post method and results action -->
+      <form method = "post" action = "/location_results">
+      <!-- need event_name and event_date using two text input (bonus- use date) -->
+      <p>Choose one of the following general locations!</p>
+      <input type = "radio" name = "general_location" value = "Harlem">Harlem<br></input>
+      <input type = "radio" name = "general_location" value = "Morningside Heights">Morningside Heights<br></input>
+      <input type = "radio" name = "general_location" value = "East Harlem">East Harlem<br></input>
+      <input type = "radio" name = "general_location" value = "Upper West Side">Upper West Side<br></input>
+      <input type = "radio" name = "general_location" value = "Upper East Side">Upper East Side<br></input>
+      <input type = "radio" name = "general_location" value = "Midtown West">Midtown West<br></input>
+      <input type = "radio" name = "general_location" value = "Midtown East">Midtown East<br></input>
+      <input type = "radio" name = "general_location" value = "Times Square">Times Square<br></input>
+      <input type = "radio" name = "general_location" value = "Murray Hill">Murray Hill<br></input>
+      <input type = "radio" name = "general_location" value = "Garment District">Garment District<br></input>
+      <input type = "radio" name = "general_location" value = "Gramercy">Gramercy<br></input>
+      <input type = "radio" name = "general_location" value = "Stuyvesant Town">Stuyvesant Town<br></input>
+      <input type = "radio" name = "general_location" value = "Chelsea">Chelsea<br></input>
+      <input type = "radio" name = "general_location" value = "Greenwich Village">Greenwich Village<br></input>
+      <input type = "radio" name = "general_location" value = "East Village">East Village<br></input>
+      <input type = "radio" name = "general_location" value = "Lower East Side">Lower East Side<br></input>
+      <input type = "radio" name = "general_location" value = "Little Italy">Little Italy<br></input>
+      <input type = "radio" name = "general_location" value = "Soho">Soho<br></input>
+      <input type = "radio" name = "general_location" value = "Tribeca">Tribeca<br></input>
+      <input type = "radio" name = "general_location" value = "Chinatown">Chinatown<br></input>
+      <input type = "radio" name = "general_location" value = "Financial District">Financial District<br></input>
+      <p>Choose one of the following sports!</p>
+      <input type = "radio" name = "sport" value = "Basketball">Basketball<br></input>
+      <input type = "radio" name = "sport" value = "Soccer">Soccer<br></input>
+      <input type = "radio" name = "sport" value = "Tennis">Tennis<br></input>
+      <input type = "radio" name = "sport" value = "Rugby">Rugby<br></input>
+      <input type = "radio" name = "sport" value = "Golf">Golf<br></input>
+      <input type = "radio" name = "sport" value = "Ice Hockey">Ice Hockey<br></input>
+      <input type = "radio" name = "sport" value = "Table Tennis">Table Tennis<br></input>
+      <input type = "radio" name = "sport" value = "Volleyball">Volleyball<br></input>
+      <input type = "radio" name = "sport" value = "Baseball">Baseball<br></input>
+      <input type = "radio" name = "sport" value = "Swimming">Swimming<br></input>
+      <input type = "radio" name = "sport" value = "Boxing">Boxing<br></input>
+      <input type = "radio" name = "sport" value = "Badminton">Badminton<br></input>
+      <input type = "radio" name = "sport" value = "Squash">Squash<br></input>
+      <input type = "radio" name = "sport" value = "Wrestling">Wrestling<br></input>
+      <input type = "radio" name = "sport" value = "Mixed Martial Arts">Mixed Martial Arts<br></input>
+      <!-- need submit button -->
+      <br><input type = "submit" value = "submit"></input>
+      </form>
+    </body>
+</html>

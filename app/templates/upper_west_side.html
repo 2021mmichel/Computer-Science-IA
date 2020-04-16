@@ -1,40 +1,49 @@
 <html>
     <head>
-      <title>Directions to Facility</title>
+      <title>Nearest Sports Facility</title>
       <link rel="icon" type="image/png" href="/../static/logo.png">
       <link rel="stylesheet" href="/../static/style.css">
     </head>
     <body>
-      <h1>Directions to Facility</h1>
+      <h1>Nearest Sports Facility</h1>
 
-      <img src="/../static/logo.png" alt="Logo" class="img1">
+      <a href="/index"><img src="/../static/logo.png" alt="Logo" class="img1"></a>
 
       <h2>Upper West Side</h2>
           <!-- set up a form with a post method and results action -->
-          <form method = "post" action = "/location_results">
-          <!-- need event_name and event_date using two text input (bonus- use date) -->
+          <form method = "post" action = "/specific_location_results">
+          <!-- need specific_location -->
           <p>Choose one of the following specific locations!</p>
-          <input type = "radio" name = "specific_location" value = ""> <br></input>
-          <input type = "radio" name = "specific_location" value = ""> <br></input>
-          <input type = "radio" name = "specific_location" value = ""> <br></input>
-          <input type = "radio" name = "specific_location" value = ""> <br></input>
-          <input type = "radio" name = "specific_location" value = ""> <br></input>
-          <input type = "radio" name = "specific_location" value = ""> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
+          <input type = "radio" name = "specific_location" value = "60th Street and West End Avenue">60th Street and West End Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "65th Street and West End Avenue">65th Street and West End Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "70th Street and West End Avenue">70th Street and West End Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "75th Street and West End Avenue">75th Street and West End Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "80th Street and West End Avenue">80th Street and West End Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "85th Street and West End Avenue">85th Street and West End Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "90th Street and West End Avenue">90th Street and West End Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "95th Street and West End Avenue">95th Street and West End Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "100th Street and West End Avenue">100th Street and West End Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "109th Street and Broadway">109th Street and Broadway<br></input>
+          <input type = "radio" name = "specific_location" value = "60th Street and Amsterdam Avenue">60th Street and Amsterdam Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "65th Street and Amsterdam Avenue">65th Street and Amsterdam Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "70th Street and Amsterdam Avenue">70th Street and Amsterdam Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "75th Street and Amsterdam Avenue">75th Street and Amsterdam Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "80th Street and Amsterdam Avenue">80th Street and Amsterdam Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "85th Street and Amsterdam Avenue">85th Street and Amsterdam Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "90th Street and Amsterdam Avenue">90th Street and Amsterdam Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "95th Street and Amsterdam Avenue">95th Street and Amsterdam Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "100th Street and Amsterdam Avenue">100th Street and Amsterdam Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "109th Street and Amsterdam Avenue">109th Street and Amsterdam Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "60th Street and Columbus Avenue">60th Street and Columbus Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "65th Street and Columbus Avenue">65th Street and Columbus Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "70th Street and Columbus Avenue">70th Street and Columbus Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "75th Street and Columbus Avenue">75th Street and Columbus Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "80th Street and Columbus Avenue">80th Street and Columbus Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "85th Street and Columbus Avenue">85th Street and Columbus Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "90th Street and Columbus Avenue">90th Street and Columbus Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "95th Street and Columbus Avenue">95th Street and Columbus Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "100th Street and Columbus Avenue">100th Street and Columbus Avenue<br></input>
+          <input type = "radio" name = "specific_location" value = "109th Street and Columbus Avenue">109th Street and Columbus Avenue<br></input>
           <!-- need submit button -->
           <button type = "submit" value = "Submit" class = "submit_button"/>Submit</button>
           </form>

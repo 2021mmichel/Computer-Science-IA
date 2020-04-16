@@ -1,40 +1,57 @@
 <html>
     <head>
-      <title>Directions to Facility</title>
+      <title>Nearest Sports Facility</title>
       <link rel="icon" type="image/png" href="/../static/logo.png">
       <link rel="stylesheet" href="/../static/style.css">
     </head>
     <body>
-      <h1>Directions to Facility</h1>
+      <h1>Nearest Sports Facility</h1>
 
-      <img src="/../static/logo.png" alt="Logo" class="img1">
+      <a href="/index"><img src="/../static/logo.png" alt="Logo" class="img1"></a>
 
       <h2>Lower East Side</h2>
           <!-- set up a form with a post method and results action -->
-          <form method = "post" action = "/location_results">
-          <!-- need event_name and event_date using two text input (bonus- use date) -->
+          <form method = "post" action = "/specific_location_results">
+          <!-- need specific_location -->
           <p>Choose one of the following specific locations!</p>
-          <input type = "radio" name = "specific_location" value = ""> <br></input>
-          <input type = "radio" name = "specific_location" value = ""> <br></input>
-          <input type = "radio" name = "specific_location" value = ""> <br></input>
-          <input type = "radio" name = "specific_location" value = ""> <br></input>
-          <input type = "radio" name = "specific_location" value = ""> <br></input>
-          <input type = "radio" name = "specific_location" value = ""> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
-          <input type = "radio" name = "specific_location" value = " "> <br></input>
+          <input type = "radio" name = "specific_location" value = "Pike Street and Cherry Street">Pike Street and Cherry Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Rutgers Street and Cherry Street">Rutgers Street and Cherry Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Clinton Street and Cherry Street">Clinton Street and Cherry Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Montgomery Street and Cherry Street">Montgomery Street and Cherry Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Jackson Street and Cherry Street">Jackson Street and Cherry Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Pike Street and Madison Street">Pike Street and Madison Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Rutgers Street and Madison Street">Rutgers Street and Madison Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Clinton Street and Madison Street">Clinton Street and Madison Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Montgomery Street and Madison Street">Montgomery Street and Madison Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Jackson Street and Madison Street">Jackson Street and Madison Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Pike Street and Henry Street">Pike Street and Henry Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Rutgers Street and Henry Street">Rutgers Street and Henry Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Clinton Street and Henry Street">Clinton Street and Henry Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Montgomery Street and Henry Street">Montgomery Street and Henry Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Jackson Street and Henry Street">Jackson Street and Henry Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Pike Street and East Broadway Street">Pike Street and East Broadway Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Rutgers Street and East Broadway Street">Rutgers Street and East Broadway Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Clinton Street and East Broadway Street">Clinton Street and East Broadway Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Montgomery Street and East Broadway Street">Montgomery Street and East Broadway Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Grand Street and Norfolk Street">Grand Street and Norfolk Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Broome Street and Norfolk Street">Broome Street and Norfolk Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Delancey Street and Norfolk Street">Delancey Street and Norfolk Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Rivington Street and Norfolk Street">Rivington Street and Norfolk Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Stanton Street and Norfolk Street">Stanton Street and Norfolk Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Grand Street and Clinton Street">Grand Street and Clinton Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Broome Street and Clinton Street">Broome Street and Clinton Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Delancey Street and Clinton Street">Delancey Street and Clinton Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Rivington Street and Clinton Street">Rivington Street and Clinton Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Stanton Street and Clinton Street">Stanton Street and Clinton Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Grand Street and Pitt Street">Grand Street and Pitt Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Broome Street and Pitt Street">Broome Street and Pitt Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Delancey Street and Pitt Street">Delancey Street and Pitt Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Rivington Street and Pitt Street">Rivington Street and Pitt Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Stanton Street and Pitt Street">Stanton Street and Pitt Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Grand Street and Columbia Street">Grand Street and Columbia Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Broome Street and Columbia Street">Broome Street and Columbia Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Delancey Street and Columbia Street">Delancey Street and Columbia Street<br></input>
+          <input type = "radio" name = "specific_location" value = "Rivington Street and Columbia Street">Rivington Street and Columbia Street<br></input>
           <!-- need submit button -->
           <button type = "submit" value = "Submit" class = "submit_button"/>Submit</button>
           </form>

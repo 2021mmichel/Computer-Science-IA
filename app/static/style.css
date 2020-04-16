@@ -9,15 +9,17 @@ body {
 .img1 {
   width: 135px;
   margin-bottom: -10px;
-  align: center;
+  float: center;
+}
+
+.img2 {
+  width: 180px;
+  margin-bottom: 5px;
+  float: center;
 }
 
 span.signup {
   float: center;
-}
-
-p {
-  
 }
 
 button {
@@ -121,6 +123,47 @@ button {
   text-decoration: none;
   display: inline-block;
   width: 8%;
+  cursor: pointer;
+}
+
+.existing_user_button {
+  background-color: #3366ff;
+  border: 2px solid black;
+  margin: 5px;
+  font-size: 10px;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 8%;
+  cursor: pointer;
+}
+
+.book_button {
+  background-color: #0000cc;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  margin-top: 20px;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.home_button {
+  background-color: #3366ff;
+  border: 2px solid black;
+  font-size: 10px;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 4.7%;
+  margin-top: 25px;
   cursor: pointer;
 }
 
