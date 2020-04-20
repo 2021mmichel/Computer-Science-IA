@@ -102,7 +102,7 @@ def general_location_results():
     general_location = user_info["general_location"]
     #connect to Mongo DB
     collection = mongo.db.locations
-    #insert the user's input general_locationto MONGO
+    #insert the user's input general_location to MONGO
     collection.insert({"general_location": general_location})
     #(so that it will continue to exist after this program stops)
 
@@ -266,7 +266,6 @@ def specific_location_results():
     specific_location = user_info["specific_location"]
     collection = mongo.db.locations
     collection.insert({"specific_location": specific_location})
-    collection = mongo.db.locations
     name = session['username']
     locations = collection.find({"user":name})
     return render_template('sport.html', locations = locations, specific_location = specific_location)
