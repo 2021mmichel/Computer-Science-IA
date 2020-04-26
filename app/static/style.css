@@ -87,6 +87,12 @@ button {
   cursor: pointer;
 }
 
+.img2 {
+  width: 180px;
+  margin-bottom: 5px;
+  float: center;
+}
+
 .submit_button {
   background-color: #0000cc;
   color: white;
