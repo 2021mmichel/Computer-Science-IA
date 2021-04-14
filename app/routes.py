@@ -26,47 +26,50 @@ mongo = PyMongo(app)
 def index():
     #connect to the Mongo DB
     collection = mongo.db.locations
-    #find all of the events in that database using a query , store it as events
+    #find all of the locations in that database using a query, store it as locations
     #{} will return everything in the database
     #list constructor will turn the results into a list (of dictionaries/objects)
     locations = list(collection.find({}))
     return render_template('index.html', locations = locations)
 
-
-# CONNECT TO DB, ADD DATA
-
+# signup route
 @app.route('/signup', methods=['POST', 'GET'])
 
 def signup():
+    # check existing users to ensure a new user ID is being created
     if request.method == 'POST':
         users = mongo.db.users
         existing_user = users.find_one({'name' : request.form['username']})
-
+        # if username entered does not match any existing ones, store user ID in MongoDB
         if existing_user is None:
             users.insert({'name' : request.form['username'], 'password' : request.form['password']})
             session['username'] = request.form['username']
+            # after successful creation of user ID, redirect user to page of general locations
             return redirect(url_for('general_location'))
-
+        # if the username entered already exists, redirect user to invalid user page
         return redirect(url_for('invalid_user_signup'))
 
         return 'That username already exists! Try logging in.'
 
     return render_template('signup.html')
 
+# login route
 @app.route('/login', methods = ['POST'])
 
 def login():
+    # compare login user to those stored in MongoDB
     users = mongo.db.users
     login_user = users.find_one({'name' : request.form['username']})
-
+    # if username and password are correct, redirect user to page of general locations
     if login_user:
         if request.form['password'] == login_user['password']:
             session['username'] = request.form['username']
             return redirect(url_for('general_location'))
-
+    # if username and password combination is incorrect, redirect user to invalid user page
     return redirect(url_for('invalid_user_login'))
 
 @app.route('/logout')
+# when user logs out, clear session
 def logout():
     session.clear()
     return redirect('/index')
@@ -88,8 +91,11 @@ def invalid_user_signup():
 
 @app.route('/general_location')
 def general_location():
+    # store locations in MongoDB
     collection = mongo.db.locations
+    # create name session
     name = session['username']
+    # store locations under user
     locations = collection.find({"user":name})
     return render_template('general_location.html', locations = locations)
 
@@ -98,13 +104,13 @@ def general_location():
 def general_location_results():
     # store userinfo from the form
     user_info = dict(request.form)
-    #store the general_location
+    # store the general_location
     general_location = user_info["general_location"]
-    #connect to Mongo DB
-    collection = mongo.db.locations
-    #insert the user's input general_location to MONGO
+    # connect to MongoDB
+    collection = mongo.db.general_locations
+    # insert the user's input general_location to MongoDB
     collection.insert({"general_location": general_location})
-    #(so that it will continue to exist after this program stops)
+    # (so that it will continue to exist after this program stops)
 
     if general_location == "Harlem":
         return redirect(url_for('harlem'))
@@ -253,18 +259,27 @@ def chinatown():
 def financial_district():
     return render_template('financial_district.html', locations = locations)
 
+# specific location route
 @app.route('/specific_location')
 def specific_location():
+    # store locations in MongoDB
     collection = mongo.db.locations
+    # create name session
     name = session['username']
+    # store locations under user
     locations = collection.find({"user":name})
     return render_template('specific_location.html', locations = locations)
 
+# get and post method for specific location
 @app.route('/specific_location_results', methods = ["specific_location_list", "POST"])
 def specific_location_results():
+    # store user info from specific location form
     user_info = dict(request.form)
+    # store the specific_location
     specific_location = user_info["specific_location"]
-    collection = mongo.db.locations
+    # connect to MongoDB
+    collection = mongo.db.specific_locations
+    # insert/store user's input specific_location to MongoDB
     collection.insert({"specific_location": specific_location})
     name = session['username']
     locations = collection.find({"user":name})
@@ -480,21 +495,25 @@ def tony_dapolito_recreation_center():
     locations = list(collection.find({"user":name}))
     return render_template('tony_dapolito_recreation_center.html', locations = locations)
 
+# sport route
 @app.route('/sport')
 def sport():
-    collection = mongo.db.locations
+    # sports collection
+    collection = mongo.db.sports
     name = session['username']
     locations = collection.find({"user":name})
     return render_template('sport.html', locations = locations)
 
+# get and post method for sport
 @app.route('/sport_results', methods = ["sport_list", "POST"])
 def sport_results():
     user_info = dict(request.form)
-    print (user_info)
+    # store user info from sport form
     sport = user_info["sport"]
-    collection = mongo.db.locations
+    # connect to MongoDB (sports collection)
+    collection = mongo.db.sports
+    # insert/store user's input sport to MongoDB
     collection.insert({"sport": sport})
-
 
 # Specific location: Harlem and Sport: Basketball
 
