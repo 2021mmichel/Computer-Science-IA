@@ -24,7 +24,7 @@ mongo = PyMongo(app)
 @app.route('/index')
 
 def index():
-    #connect to the Mongo DB
+    #connect to the MongoDB
     collection = mongo.db.locations
     #find all of the locations in that database using a query, store it as locations
     #{} will return everything in the database
